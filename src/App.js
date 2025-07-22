@@ -1,17 +1,17 @@
-import logo from './logo.svg';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Products from './components/Products';
-import { createBrowserRouter, Link, Outlet, RouterProvider } from 'react-router-dom';
-import About from './components/About';
+import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 import ProductCategory from './components/ProductCategory';
 import Register from './components/Register';
+
 function App() {
   let router = createBrowserRouter([
     {
       path: "",
       element: (
         <>
+          
           <NavBar />
           <Link to={"product-category"}>Product Category</Link>
           <Footer />
@@ -64,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default App ;
