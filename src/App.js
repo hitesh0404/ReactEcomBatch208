@@ -4,6 +4,7 @@ import Products from './components/Products';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 import ProductCategory from './components/ProductCategory';
 import Register from './components/Register';
+import Counter from './components/Counter';
 
 function App() {
   let router = createBrowserRouter([
@@ -51,6 +52,17 @@ function App() {
           <Footer />
         </>
       ),
+    },
+    {
+      path: "/counter",
+      element: (
+        <>
+          <NavBar />
+          <Counter />
+          <Footer />
+        </>
+
+      )
     },
     {
       path: "*",
