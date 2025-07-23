@@ -5,6 +5,7 @@ import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 import ProductCategory from './components/ProductCategory';
 import Register from './components/Register';
 import Counter from './components/Counter';
+import CounterNew from './components/CounterNew';
 
 function App() {
   let router = createBrowserRouter([
@@ -12,7 +13,6 @@ function App() {
       path: "",
       element: (
         <>
-          
           <NavBar />
           <Link to={"product-category"}>Product Category</Link>
           <Footer />
@@ -29,7 +29,7 @@ function App() {
         },
         {
           path: "register",
-          element: <Register />
+          element: <Register />,
         },
       ],
     },
@@ -61,8 +61,17 @@ function App() {
           <Counter />
           <Footer />
         </>
-
-      )
+      ),
+    },
+    {
+      path: "/counter-new",
+      element: (
+        <>
+          <NavBar />
+          <CounterNew />
+          <Footer />
+        </>
+      ),
     },
     {
       path: "*",
