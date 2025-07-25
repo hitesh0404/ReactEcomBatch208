@@ -6,7 +6,9 @@ import ProductCategory from './components/ProductCategory';
 import Register from './components/Register';
 import Counter from './components/Counter';
 import CounterNew from './components/CounterNew';
-
+import UseOfMemo from './components/UseOfMemo';
+import Example from './components/Example';
+import ErrorBoundary from './components/ErrorBoundary';
 function App() {
   let router = createBrowserRouter([
     {
@@ -58,7 +60,9 @@ function App() {
       element: (
         <>
           <NavBar />
+          <ErrorBoundary > 
           <Counter />
+          </ErrorBoundary>
           <Footer />
         </>
       ),
@@ -73,6 +77,27 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/memo",
+      element: (
+        <>
+          <NavBar />
+          <UseOfMemo />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/example",
+      element: (
+        <>
+          <NavBar />
+          <Example />
+          <Footer />
+        </>
+      ),
+    },
+
     {
       path: "*",
       element: <>404 not Found</>,

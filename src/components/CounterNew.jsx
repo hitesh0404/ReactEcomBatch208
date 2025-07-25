@@ -4,6 +4,7 @@ let initialState = {
     msg : "neutral"
 }
 function dispatch(state, action) {
+
     switch (action.command) {
         case "increment":
             return {
@@ -20,6 +21,7 @@ function dispatch(state, action) {
     }
 }
 function CounterNew() {
+    
     // const [count, setcount] = useState(0);
     // const [msg, setMSG] = useState("neutral");
     const [state, setState] = useReducer(dispatch, initialState);

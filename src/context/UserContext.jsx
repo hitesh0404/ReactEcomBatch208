@@ -1,9 +1,10 @@
-import React,{useEffect,useState} from 'react'
+import React,{ useEffect,useState} from 'react'
 import App from '../App';
 const userDataContext = React.createContext();
 
-function UserContext({ component }) {
+const UserContext = ( function ({ component }) {
     const [userData, setUserData] = useState({});
+      console.log("rerendered");
 
     useEffect(() => {
       fetch("http://127.0.0.1:5500/data/user.json")
@@ -12,12 +13,14 @@ function UserContext({ component }) {
           setUserData(data);
           console.log(data);
         });
+      console.log("rerendered");
+      
     }, []);
     return (
        <userDataContext.Provider value= {userData}>
            <App /> 
          </userDataContext.Provider>
     )
-}
-export default UserContext;
+})
+export default ( UserContext);
 export { userDataContext };

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-function Products({link,...data}) {
+const Products = memo(function({link}) {
   let count = 0;
+  console.log("rerendered");
+  
   let { categoryName } = useParams();
   let [products, setProducts] = useState({ products: [] });
   let [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ function Products({link,...data}) {
         setTimeout(() => {
           setProducts(data);
           setLoading(false);
-        },2000)
+        },4000)
         return data;
       });
   }, [loading])
@@ -36,7 +38,7 @@ function Products({link,...data}) {
     </>
   ) : (
     <>
-      {Math.random()}
+      
       <div>
         {products.products.map((value, index) => {
           return (
@@ -58,5 +60,5 @@ function Products({link,...data}) {
     </>
   );
 }
-
+)
 export default Products;
